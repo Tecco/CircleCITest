@@ -1,0 +1,15 @@
+machine:
+  java:
+    version: oraclejdk8
+  timezone:
+    Asia/Tokyo
+
+dependencies:
+  pre:
+    - chmod +x ./gradlew
+    - pwd
+    - ls
+
+test:
+  override:
+    - ./gradlew assembleDebug
