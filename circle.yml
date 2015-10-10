@@ -8,9 +8,9 @@ dependencies:
   pre:
     - chmod +x ./gradlew
   override:
-      - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-23.0.1,android-23
-      - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+    - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-23.0.1,android-23
+    - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
 test:
   override:
-    - ./gradlew connectedAndroidTest
+    - ./gradlew assembleDebug
