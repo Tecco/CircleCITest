@@ -32,6 +32,6 @@ public class ApplicationTest {
     @Test
     public void context() {
         // Contextを使ったテスト
-        assertThat(mContext.getString(R.string.app_name), is("CircleCITest"));
+        assertThat(mContext.getString(R.string.app_name), is("CircleCITest2"));
     }
 }
