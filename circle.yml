@@ -1,16 +1,16 @@
 machine:
   java:
-    version: oraclejdk7
+    version: oraclejdk8
   timezone:
     Asia/Tokyo
-  environment:
-    ANDROID_HOME: /usr/local/android-sdk-linux
+
 dependencies:
   pre:
     - chmod +x ./gradlew
   override:
-    - echo y | android update sdk --no-ui --filter "android-23,build-tools-23.0.1"
-    - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+      - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-23.0.1,android-23
+      - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+
 test:
   override:
     - ./gradlew connectedAndroidTest
